@@ -22,7 +22,7 @@ function getXMLObject()  //XML OBJECT
 }
 var xmlhttp = new getXMLObject(); //xmlhttp holds the ajax object
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-function buscarDocumento(){
+function guardar(){
 	var identificacion = document.getElementById('identificacion').value;
 	var nombre =document.getElementById("nombre").value;
 	var usuario= document.getElementById('usuario').value;
@@ -41,22 +41,22 @@ function buscarDocumento(){
 		return
 	}
 	if(usuario ==""){
-		alert.getElementById("INGRESE USUARIO")
+		alert("INGRESE USUARIO")
 		document.getElementById("usuario").focus();
 		return
 	}
 	if(contrasena==""){
-		alert.getElementById("INGRESE CONTRASEÑA")
+		alert("INGRESE CONTRASEÑA")
 		document.getElementById("contrasena").focus();
 		return
 	}
 	if(estado==""){
-		alert.getElementById("INGRESE ESTADO")
+		alert("INGRESE ESTADO")
 		document.getElementById("estado").focus();
 		return
 	}
 	if(fecha==""){
-		alert.getElementById("INGRESE FECHA")
+		alert("INGRESE FECHA")
 		document.getElementById("fecha").focus();
 		return		
 	}
@@ -76,6 +76,8 @@ function buscarDocumento(){
 			+ "&estado="+estado
 			+ "&fecha="+fecha
 	);
+	
+	alert("ingreso echo: " + nombre);
 }
 
 
@@ -133,7 +135,7 @@ function buscar(){
       				}
 			}
 			ajax.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=utf-8');
-			ajax.send("valor=1.1&" +
+			ajax.send("valor=Buscar" +
 				   "&txtnumdocu="+cedula);
 				
 				}

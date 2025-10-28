@@ -19,7 +19,7 @@ public class MetodoCrud {
 		try {
 			PreparedStatement ps = null;
 			Conexion con = new Conexion();
-			ps=con.conn.prepareStatement("INSERT INTO personas (cc, Nombre, Usuario, Contraseña,"
+			ps=con.connection.prepareStatement("INSERT INTO personas (cc, Nombre, Usuario, Contraseña,"
 					+ "Estado,FechaNacimiento)  "
 					+ "VALUES (?,?,?,?,?,?)");
 			ps.setString(1, identificacion);
@@ -41,7 +41,7 @@ public class MetodoCrud {
 		Statement st = null;
 		try {
 			Conexion con = new Conexion();
-			st = con.conn.createStatement();
+			st = con.connection.createStatement();
 			rs = st.executeQuery("SELECT sigla,descripcion FROM adm_tipodocumento");
 		} catch (Exception ex) {
 			System.out.println("Error en MetodoCrud>>ObtenerSiglaTipoDocumento " + ex);
@@ -62,7 +62,7 @@ public java.sql.ResultSet obtenerDatos(String cedula) {
 	Statement st = null;
 	try {
 		Conexion con = new Conexion();
-		st = con.conn.createStatement();
+		st = con.connection.createStatement();
 		rs = st.executeQuery("select cc, Nombre, Estado , FechaNacimiento from personas where cc ='" + cedula+ "'");
 	} catch (Exception ex) {
 		System.out.println("Error en MetodoCrud>>obtenerDatosPacienteActuaDemogra " + ex);
@@ -81,7 +81,7 @@ public  void ActualizarDatos(String Identi, String Nombre, String Estado, String
 	PreparedStatement st = null;
 	try {
 		Conexion con = new Conexion();
-		st = con.conn.prepareStatement("update personas set  Nombre='"+ Nombre + "',Estado='" + Estado + "',FechaNacimiento='" + Fecha + "'  where cc='" + Identi + "'");
+		st = con.connection.prepareStatement("update personas set  Nombre='"+ Nombre + "',Estado='" + Estado + "',FechaNacimiento='" + Fecha + "'  where cc='" + Identi + "'");
 		st.executeUpdate();
 		st.close();
 		con.cerrar();
@@ -96,7 +96,7 @@ public void eliminar(String cedula) {
 	PreparedStatement st = null;
 	try {
 		Conexion con = new Conexion();
-		st = con.conn.prepareStatement("DELETE FROM personas WHERE cc = '" + cedula +"'");
+		st = con.connection.prepareStatement("DELETE FROM personas WHERE cc = '" + cedula +"'");
 		System.out.println(st);
 		st.executeUpdate();
 		st.close();
@@ -107,10 +107,4 @@ public void eliminar(String cedula) {
 		ex.getMessage();
 	}
 }
-
-
-
-
-
-
 }

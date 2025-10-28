@@ -18,7 +18,7 @@ public class Conexion {
     private static final String URL = "jdbc:mysql://192.9.0.206:3307/prueba";
     private static final String USER = "root";
     private static final String PASS = "123";
-    
+
     /**
      * Crea la conexion con la base de datos y la almacena en el atributo ´connection´.
      *
@@ -41,17 +41,14 @@ public class Conexion {
         }
     }
 
-
+    /**
+     * Cierra la conexion a la base de datos.
+     * terminano con el acceso a la base de datos a todo objeto que este usando la referencia al atributo ´connecion´ de esta clase
+     */
     public void cerrar() {
         try {
             connection.close();
         }
         catch (Exception ex) { }
-    }
-
-    public static ResultSet Log(String r)throws SQLException{
-        Statement st=null;
-        //  st= conn.createStatement();
-        return st.executeQuery(r);
     }
 }

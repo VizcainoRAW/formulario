@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e62842f3-957f-4ca3-b54c-d52ccb9bfa05" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controlador/RUN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Conexion/Conexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Conexion/Conexion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controlador/ControFormulario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controlador/ControFormulario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Metodo/MetodoCrud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Metodo/MetodoCrud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ObtenerDatos.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Seg_Ulogin.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jss.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jss.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="34hU0E2UGueuO0jUmSp2aJnwz28" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/CCOSTA-352/Desktop/project/formulario",
+    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e62842f3-957f-4ca3-b54c-d52ccb9bfa05" name="Changes" comment="" />
+      <created>1761665071252</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1761665071252</updated>
+    </task>
+    <servers />
+  </component>
+</project>

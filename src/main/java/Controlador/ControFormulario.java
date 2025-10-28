@@ -49,19 +49,7 @@ public class ControFormulario extends HttpServlet {
 	//	String usuarioresp = (String) session.getAttribute("codusuario");
 			
 		if(valor.equals("1")){
-			String identificacion=req.getParameter("identificacion");
-			String nombre=req.getParameter("nombre");
-			String usuario=req.getParameter("usuario");
-			String contrasena=req.getParameter("contrasena");
-			String estado=req.getParameter("estado");
-			String fecha=req.getParameter("fecha");
-			
-			try {
-				mad.Insertusuarios(identificacion, nombre, usuario, contrasena, estado, fecha);
-				
-			} catch (Exception e) {
-				// TODO: handle exception
-			}	
+
 		
 			
 		}
@@ -75,8 +63,25 @@ public class ControFormulario extends HttpServlet {
 		case "Busqueda":
 			out.print( BUSQUEDA_JSP );
 			break;
-			
+		
 		case "Guardar":
+			String identificacion=req.getParameter("identificacion");
+			String nombre=req.getParameter("nombre");
+			String usuario=req.getParameter("usuario");
+			String contrasena=req.getParameter("contrasena");
+			String estado=req.getParameter("estado");
+			String fecha=req.getParameter("fecha");
+			
+			try {
+				mad.Insertusuarios(identificacion, nombre, usuario, contrasena, estado, fecha);
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}	
+			
+			break;
+			
+		case "Buscar":
 			String numdocu = req.getParameter("txtnumdocu");
 			String Identificacion = "";
 			String Nombre = "";
@@ -125,31 +130,30 @@ public class ControFormulario extends HttpServlet {
 							+"<td colspan='6'  align='center' ><input type='button' name='btingresar' class='boton4' id='Guardar' value='Actualizar' onclick='ActualizarD()'></td>"
 							+"</tr>");
 			break;
+        
+		case "Eliminar":
+            String cedulaUsuarioAeliminar = req.getParameter("cedula");
+            mad.eliminar(cedulaUsuarioAeliminar);
+			break;
 
-            case "Eliminar":
-                String cedula = req.getParameter("cedula");
-                mad.eliminar(cedula);
-
-            case "2":
-                String Identi = req.getParameter("txtIdentificaion");
-                String nombre = req.getParameter("txtNombre");
-                String estado = req.getParameter("txtEstado");
-                String fechanaci = req.getParameter("txtFechaNaci");
-                String encabezado = "";
+        case "2":
+            String Identi = req.getParameter("txtIdentificaion");
+            String nombreParaActualizar = req.getParameter("txtNombre");
+            String estadoParaActualizar = req.getParameter("txtEstado");
+            String fechanaci = req.getParameter("txtFechaNaci");
+            String encabezado = "";
 
 
                 try {
                     if (encabezado.equals("")) {
-                        mad.ActualizarDatos(Identi, nombre, estado, fechanaci);
+                        mad.ActualizarDatos(Identi, nombreParaActualizar, estadoParaActualizar, fechanaci);
                     }
                     //mad.ActualizarDatos(Identi, nombre, estado, fechanaci);
                 } catch (Exception e) {
                     System.out.println("Error " + e);
                     e.printStackTrace();
                 }
-
-
-
+				break;
 		}
     }
 	
@@ -178,7 +182,7 @@ public class ControFormulario extends HttpServlet {
 					+ "								<td><span class='Estilo8'>Fecha Nacimiento</span></td>"
 					+ "								<td><label> <input type='date' name='txtfechanaci' id='fecha' maxlength='10' /> <span class='style8'>*</span></label></td>"
 					+ "								<td colspan='6'  align='center' ><input type='button' name='btingresar' class='boton4' id='MostrarBusqueda' value='     Iniciar busqueda    ' onclick='mostrarBusqueda()'></td>"
-					+ "								<td colspan='6'  align='center' ><input type='button' name='btingresar' class='boton4' id='Guardar' value='     Ingresar    ' onclick='buscarDocumento()'></td>\r\\n"
+					+ "								<td colspan='6'  align='center' ><input type='button' name='btingresar' class='boton4' id='Guardar' value='     Ingresar    ' onclick='guardar()'></td>\r\\n"
 					+ "							</tr>"
 					+ "						</table>	";
 
