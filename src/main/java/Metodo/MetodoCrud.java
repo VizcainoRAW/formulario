@@ -12,7 +12,36 @@ import java.sql.Statement;
 
 import Conexion.Conexion;
 
+
+/**
+ * Esta clase esta encargada de hacer las operaciones CRUD a la base de datos, dirijida a la tabla {@code Usuarios} <br>
+ *  <p>
+ * Tabla cuyos atributos son:
+ * <blockquote><pre>
+ * String identificacion,
+ * String nombre,
+ * String usuario,
+ * String contrasena,
+ * String estado,
+ * String fecha
+ * </pre></blockquote>
+ * @category persistencia / DAO (Data Acces Object)
+ * @author Ivan Vizcaino
+ */
 public class MetodoCrud {
+
+	/**
+	 * Guarda en la base de datos los parametros ingresados todos en formato de texto {@code String}
+	 * <p>
+	 * No evita duplicados
+	 *  
+	 * @param identificacion numero de identificacion, no distingue tipo, puede contener las iniciales dle tipo
+	 * @param nombre nombre del ingreso
+	 * @param usuario
+	 * @param contrasena
+	 * @param estado
+	 * @param fecha
+	 */
 	public void Insertusuarios(String identificacion,String nombre,String usuario,String contrasena,
 			String estado,String fecha){
 		
@@ -36,20 +65,6 @@ public class MetodoCrud {
 		}
 	}
 
-	public java.sql.ResultSet ObtenerSiglaTipoDocumento() {
-		java.sql.ResultSet rs = null;
-		Statement st = null;
-		try {
-			Conexion con = new Conexion();
-			st = con.connection.createStatement();
-			rs = st.executeQuery("SELECT sigla,descripcion FROM adm_tipodocumento");
-		} catch (Exception ex) {
-			System.out.println("Error en MetodoCrud>>ObtenerSiglaTipoDocumento " + ex);
-		}
-
-		return rs;
-	}
-	
 
 public java.sql.ResultSet obtenerDatos(String cedula) {
 	/**
@@ -97,7 +112,6 @@ public void eliminar(String cedula) {
 	try {
 		Conexion con = new Conexion();
 		st = con.connection.prepareStatement("DELETE FROM personas WHERE cc = '" + cedula +"'");
-		System.out.println(st);
 		st.executeUpdate();
 		st.close();
 		con.cerrar();

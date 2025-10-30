@@ -10,7 +10,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import Metodo.MetodoCrud;
 
@@ -34,26 +33,14 @@ public class ControFormulario extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 	
 		String valor = req.getParameter("valor");
-		//session = req.getSession(true);
-		HttpSession session = req.getSession(true);
 		res.setContentType("text/JSP;charset=UTF-8");
 		PrintWriter out;
 		out = res.getWriter();
 
 		MetodoCrud mad = new MetodoCrud();
-		
-		
-		ResultSet rs = null;
-		ResultSet rs1 = null;
-		
-	//	String usuarioresp = (String) session.getAttribute("codusuario");
-			
-		if(valor.equals("1")){
 
-		
+		ResultSet rs1 = null;
 			
-		}
-		
 		switch (valor) {
 			
 		case "Inicio":
@@ -64,7 +51,7 @@ public class ControFormulario extends HttpServlet {
 			out.print( BUSQUEDA_JSP );
 			break;
 		
-		case "Guardar":
+		case "Guardar": 
 			String identificacion=req.getParameter("identificacion");
 			String nombre=req.getParameter("nombre");
 			String usuario=req.getParameter("usuario");
@@ -161,30 +148,30 @@ public class ControFormulario extends HttpServlet {
 	
 	
 	private static  String INGRESO_JSP = "<table width='100%' aling='center'>"
-					+ "							<tr>"
-					+ "								<td colspan='6' id='cabecera2' class='style11'   BGCOLOR='#76A7AB' STYLE='color:#FFFFFF;'><div	align='center'><p><strong >SOLICITUD DE INGRESO</strong></p></div></td>"
-					+ "							</tr>"
-					+ "							<tr>	"
-					+ "								<td><span class='Estilo8'>Identificacion</span></td>"
-					+ "								<td><label> <input name='identificacin' type='text' id='identificacion'maxlength='20' value='' /> <span class='style8'>*</span></label></td>												"
-					+ "								<td><span class='Estilo8'>Nombre</span></td>"
-					+ "								<td><label> <input name='sa' type='text' id='nombre' maxlength='20' value='' /> </label></td>"
-					+ "							</tr>"
-					+ "							<tr>"
-					+ "								<td><span class='Estilo8'>usuario</span></td>"
-					+ "							 	<td><label> <input name='txtnombre' type='text' id='usuario'  value='' /><span class='style8'>*</span></label></td>"
-					+ "								<td><span class='Estilo8'>Password</span></td>"
-					+ "								<td><label> <input name='txtsnombre' type='text' id='contrasena'  value='' /><span class='style8'>*</span></label></td>"
-					+ "							</tr>"
-					+ "							<tr>"
-					+ "								<td><span class='Estilo8'>Estado</span></td>"
-					+ "								<td><label> <input name='sexo' type='text' id='estado' value='' /> <span class='style8'>*</span></label></td>"
-					+ "								<td><span class='Estilo8'>Fecha Nacimiento</span></td>"
-					+ "								<td><label> <input type='date' name='txtfechanaci' id='fecha' maxlength='10' /> <span class='style8'>*</span></label></td>"
-					+ "								<td colspan='6'  align='center' ><input type='button' name='btingresar' class='boton4' id='MostrarBusqueda' value='     Iniciar busqueda    ' onclick='mostrarBusqueda()'></td>"
-					+ "								<td colspan='6'  align='center' ><input type='button' name='btingresar' class='boton4' id='Guardar' value='     Ingresar    ' onclick='guardar()'></td>\r\\n"
-					+ "							</tr>"
-					+ "						</table>	";
+			+ "							<tr>"
+			+ "								<td colspan='6' id='cabecera2' class='style11'   BGCOLOR='#76A7AB' STYLE='color:#FFFFFF;'><div	al='center'><p><strong >SOLICITUD DE INGRESO</strong></p></div></td>"
+			+ "							</tr>"
+			+ "							<tr>"
+			+ "								<td><span class='Estilo8'>Identificacion</span></td>"
+			+ "								<td><label> <input name='identificacin' type='text' id='identificacion'maxlength='20' value='' /> <span class='style8'>*</span></label></td>"
+			+ "								<td><span class='Estilo8'>Nombre</span></td>"
+			+ "								<td><label> <input name='sa' type='text' id='nombre' maxlength='20' value='' /> </label></td>"
+			+ "							</tr>"
+			+ "							<tr>"
+			+ "								<td><span class='Estilo8'>usuario</span></td>"
+			+ "								<td><label> <input name='txtnombre' type='text' id='usuario'  value='' /><span class='style8'>*</span></label></td>"
+			+ "								<td><span class='Estilo8'>Password</span></td>"
+			+ "								<td><label> <input name='txtsnombre' type='text' id='contrasena'  value='' /><span class='style8'>*</span></label></td>"
+			+ "							</tr>"
+			+ "							<tr>"
+			+ "								<td><span class='Estilo8'>Estado</span></td>"
+			+ "								<td><label> <input name='sexo' type='text' id='estado' value='' /> <span class='style8'>*</span></label></td>"
+			+ "								<td><span class='Estilo8'>Fecha Nacimiento</span></td>"
+			+ "								<td><label> <input type='date' name='txtfechanaci' id='fecha' maxlength='10' /> <span class='style8'>*</span></label></td>"
+			+ "								<td colspan='6'  aling='center' ><input type='button' name='btingresar' class='boton4' id='MostrarBusqueda' value='Iniciar busqueda' onclick='mostrarBusqueda()'></td>"
+			+ "								<td colspan='6'  aling='center' ><input type='button' name='btingresar' class='boton4' id='Guardar' value='Ingresar' onclick='guardar()'></td>"
+			+ "							</tr>"
+			+ "						</table>";
 
 	
 	private static final String BUSQUEDA_JSP = "<TR>"

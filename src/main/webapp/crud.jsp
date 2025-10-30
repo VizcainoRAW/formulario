@@ -20,7 +20,7 @@
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <body onload="MostrarCrud();" id="back" >
-		<table width="100%" class="style6" align="center" >
+		<table width="100%" class="style6" aling="center" >
 			<tr>
 				<td>
 					<div id="ingreso" ></div>

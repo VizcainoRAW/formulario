@@ -20,9 +20,9 @@ public class Conexion {
     private static final String PASS = "123";
 
     /**
-     * Crea la conexion con la base de datos y la almacena en el atributo ´connection´.
+     * Crea la conexion con la base de datos y la almacena en el atributo {@link #connection}.
      *
-     * el atributo inicia como nulo, se tiene que llamar a esta funcion por lo menos una vez para inicializar la conexion.
+     * el atributo inicia como nulo, Cuando se instacia este objeto se crea una conexion.
      *
      * este metodo ejecuta un info log de util java.util.logging.Logger con el siguiente mensaje: "Conexion creada con exito" cuado
      * se crea con exito una conexion. en caso de error se hace catch ejecutanto un log del mismo logger con un nivel "SEVERE" con el mensaje "Error al conectarse a la base de datos (exception)"
